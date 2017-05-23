@@ -17,11 +17,15 @@ class CreateUsersTable < ActiveRecord::Migration[5.1]
   end
 end
 
-update column (:table, :column, :new_type)
+to update column (:table, :column, :new_type)
 change_column(:blogs, :content, :text)
 
 add to table
 change_table :table do |t|
+    t.remove :column -- removes column
+    t.string :new_column -- adds column
+
+drop_table :table_name -- removes table
 
 rake db:migrate
 
